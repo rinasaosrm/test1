@@ -1,11 +1,11 @@
-// Debouncing in Javascript
+
 let counter = 0;
 const getData = () => {
-  // calls an API and gets Data
+  
   console.log("Fetching Data ..", counter++);
 }
 
-const debounce = function (fn, d) {
+const debounce = function (fn, delay) {
   let timer;
   return function () {
     let context = this,
@@ -13,7 +13,7 @@ const debounce = function (fn, d) {
     clearTimeout(timer);
     timer = setTimeout(() => {
       getData.apply(context, arguments);
-    }, d);
+    }, delay);
   }
 }
 
